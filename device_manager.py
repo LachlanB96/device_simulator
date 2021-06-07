@@ -20,6 +20,9 @@ class DeviceManager:
             response = device.ping()
             print(response)
 
+    def clear_devices(self):
+        self.list_of_devices = []
+
     def setup_device(self, target, name, connections, ticks_until_update):
         self.list_of_devices[target].setup(name, connections, ticks_until_update)
         #self.list_of_devices[target].print_device_details()
