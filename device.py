@@ -26,6 +26,9 @@ class Device:
     def add_connection(self, connection):
         self.connections.append(connection)
 
+    def get_name(self):
+        return self.name
+
     def get_connections(self):
         return self.connections
 
@@ -49,6 +52,7 @@ class Device:
             self.check_if_neightbour_knows(target)
             return False
 
+    #This function checks to see if the target we need is in the neighbours connection list
     def check_if_neightbour_knows(self, target):
         for neighbours_connection in self.neighbours_connections:
             print(self.neighbours_connections)

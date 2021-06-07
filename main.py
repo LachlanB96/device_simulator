@@ -9,14 +9,19 @@ device_manager.setup_device(1, "1", [3], 5)
 device_manager.tick_devices()
 
 while running:
-    print("1. Tick")
-    print("2. Select Device")
-    print("3. Print All Device Info")
-    print("q. Quit Program")
-    val = input("Enter your value: ")
+    
+    val = input("(? for help) >> ")
     if(val == "1"):
         device_manager.tick_devices()
-    if(val == "q"):
+    elif(val == "2"):
+        print(device_manager.get_devices())
+    elif(val == "?"):
+        print("1. Tick")
+        print("2. Select Device")
+        print("3. Print All Device Info")
+        print("q. Quit Program")
+        print("?. Shows All Commands")
+    elif(val == "q"):
         running = False
 
 # list_of_devices[0].add_connection(1)
