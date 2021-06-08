@@ -12,7 +12,7 @@ class Device:
         self.neighbours_connections = {}
         self.state = "online"
         self.ticks_until_update = 10
-        self.target = 5
+        self.target = '5'
 
     def __repr__(self):
         return f"ID: {self.name}"
@@ -84,4 +84,16 @@ class Device:
                 self.state = "targetting"
                 self.target = self.connections[0]
         
+    def incoming_message(self, message):
+        #message is a json object (Origin, Destination, Data, RequestType)
+        if(message["RequestType"] == "routes"):
+            print(self.print_connections())
+            return self.print_connections()
+
+    def send_message(self, target):
+        message = {"Origin": self.name,
+                    "Destination": target,
+                    "Data": "Blah",
+                    "RequestType": "routes"}
+        return message
         
