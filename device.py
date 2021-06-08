@@ -14,6 +14,9 @@ class Device:
         self.ticks_until_update = 10
         self.target = 5
 
+    def __repr__(self):
+        return f"ID: {self.name}"
+
 
     def setup(self, name, connections, ticks_until_update):
         self.name = name

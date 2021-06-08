@@ -7,10 +7,12 @@ class DeviceManager:
         self.list_of_devices = []
 
     def get_devices(self):
-        device_names = []
-        for device in self.list_of_devices:
-            device_names.append(device.get_name())
-        return(device_names)
+        # print('[%s]' % ', '.join(map(str, self.list_of_devices)))
+        # device_names = []
+        # for device in self.list_of_devices:
+        #     device_names.append(device.get_name())
+        # return(device_names)
+        return('[%s]' % ', '.join(map(str, self.list_of_devices)))
 
     def create_devices(self):
         for x in range(self.number_of_devices):
