@@ -8,17 +8,12 @@ class DeviceManager:
         self.dict_of_devices = {}
 
     def get_devices(self):
-        # print('[%s]' % ', '.join(map(str, self.list_of_devices)))
-        # device_names = []
-        # for device in self.list_of_devices:
-        #     device_names.append(device.get_name())
-        # return(device_names)
         return('[%s]' % ', '.join(map(str, self.list_of_devices)))
 
     def create_devices(self):
         for x in range(self.number_of_devices):
             self.list_of_devices.append(Device(x))
-            self.dict_of_devices[str(x)] = Device(x)
+            self.dict_of_devices[x] = Device(str(x))
         
         for deviceID in self.dict_of_devices:
             device = self.dict_of_devices[deviceID]
@@ -30,7 +25,6 @@ class DeviceManager:
 
     def setup_device(self, target, name, connections, ticks_until_update):
         self.dict_of_devices[target].setup(name, connections, ticks_until_update)
-        #self.list_of_devices[target].print_device_details()
 
     def tick_devices(self):
         for deviceID in self.dict_of_devices:

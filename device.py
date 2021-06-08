@@ -88,6 +88,7 @@ class Device:
         #message is a json object (Origin, Destination, Data, RequestType)
         if(message["RequestType"] == "routes"):
             print(self.print_connections())
+            self.send_message(message["Origin"])
             return self.print_connections()
 
     def send_message(self, target):

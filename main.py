@@ -8,8 +8,8 @@ device_manager = DeviceManager()
 def device_init_mode(device_manager):
     device_manager.clear_devices()
     device_manager.create_devices()
-    device_manager.setup_device('0', "0", ['1', '2'], 1)
-    device_manager.setup_device('1', "a", ['3'], 5)
+    device_manager.setup_device(0, "0", [1, 2], 1)
+    device_manager.setup_device(1, "a", [3], 5)
     device_manager.tick_devices()
 
 def device_select_mode():
@@ -17,10 +17,12 @@ def device_select_mode():
     selecting = True
     while selecting:
         val = input("Device ID >> ")
+        print("\n"*5)
         if(val == "q"):
             selecting = False
+            break
         # device_manager.neighbour_message(str(val))
-        device_manager.neighbour_message(str(val), '0')
+        device_manager.neighbour_message(int(val), 0)
 
 def print_menu_mode():
     print("0. Init Devices to Default")
