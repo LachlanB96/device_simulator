@@ -5,7 +5,7 @@ class DeviceManager:
     def __init__(self):
         self.number_of_devices = 10
         self.list_of_devices = []
-        self.dict_of_devices = {}
+        self.dict_of_devices: dict[int: Device] = {}
 
     def get_devices(self):
         return('[%s]' % ', '.join(map(str, self.list_of_devices)))

@@ -5,6 +5,14 @@ import sys
 running = True
 device_manager = DeviceManager()
 
+# Default
+# * Important
+# ! Deprecated
+# ? Unsure piece of code
+# TODO things to that need to be added to the code
+# @arg thisParam This is a parameter
+# ! test
+
 def device_init_mode(device_manager):
     device_manager.clear_devices()
     device_manager.create_devices()
