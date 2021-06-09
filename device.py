@@ -1,3 +1,5 @@
+from device_connections import Connection
+
 class Device:
 
     # name = "Default"
@@ -7,12 +9,13 @@ class Device:
 
 
     def __init__(self, name):
-        self.name = name
+        self.name: str = name
         self.connections = []
         self.neighbours_connections = {}
         self.state = "online"
         self.ticks_until_update = 10
         self.target = '5'
+        connection = Connection()
 
     def __repr__(self):
         return f"ID: {self.name}"
